@@ -10,3 +10,11 @@ type Document struct {
 func ChangeStatus(doc *Document, newStatus string) {
 	doc.Status = newStatus
 }
+
+func (d Document) IsProcessing() bool {
+	return d.Status == "processing"
+}
+
+func (d *Document) MarkProcessed() {
+	d.Status = "processed"
+}

@@ -9,7 +9,11 @@ func main() {
 		Size:   4096,
 		Status: "uploaded",
 	}
-	fmt.Println(doc.Name, doc.Status)
+
+	fmt.Println(doc.Status)
 	ChangeStatus(&doc, "processing")
 	fmt.Println(doc.Status)
+	doc.MarkProcessed()
+	fmt.Println(doc.Status)
+
 }
