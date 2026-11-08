@@ -1,0 +1,12 @@
+# GoLand
+.idea/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Go build artifacts
+*.exe
+*.test
+*.out
