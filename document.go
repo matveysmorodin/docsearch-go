@@ -18,3 +18,15 @@ func (d Document) IsProcessing() bool {
 func (d *Document) MarkProcessed() {
 	d.Status = "processed"
 }
+
+func (d *Document) CanStartProcessing() bool {
+	return d.Status == "uploaded" && d.Name != "" && d.Size > 0
+}
+
+func (d *Document) StartProcessing() bool {
+	if d.CanStartProcessing() {
+		d.Status = "processing"
+		return true
+	}
+	return false
+}
